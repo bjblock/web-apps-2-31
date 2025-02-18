@@ -5,8 +5,9 @@ class ContactsController < ApplicationController
     @company = Company.find_by({"id" => @contact["company_id"]})
     # render contacts/show view with details about Contact
   end
-
+  
   def new
+    @company = Company.find_by({"id" => params["company_id"]})
     # render contacts/new view with new Contact form
   end
 
